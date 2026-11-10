@@ -1,0 +1,97 @@
+/* It's highly recommended to import your style.css here if this file is meant to be standalone
+   and relies on the variables defined in style.css. Adjust the path as needed. */
+@import "style.css"; /* Example: @import "../style.css"; or @import "file:path/to/style.css"; */
+
+/* --- Root background matching anggota-theme main-pane --- */
+.dashboard-anggota-root {
+    -fx-background-color: linear-gradient(from 0% 0% to 100% 100%,
+                                           -light-bg-start,
+                                           -light-accent,
+                                           -light-bg-end);
+}
+
+/* --- Sidebar background, similar to anggota-theme login-card --- */
+.dashboard-anggota-sidebar {
+    -fx-background-color: -light-card-bg; /* Uses the light card background */
+    -fx-padding: 20px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 10, 0.05, 5, 0);
+    -fx-border-color: rgba(255, 255, 255, 0.9); /* From anggota-theme login-card */
+    -fx-border-width: 1px;
+    -fx-background-radius: 20px; /* Optional, but consistent with login-card */
+    -fx-border-radius: 20px; /* Optional, but consistent with login-card */
+}
+
+/* --- Welcome text, similar to anggota-theme title-text --- */
+.dashboard-anggota-welcome-text {
+    -fx-text-fill: -light-text; /* Uses the light text color */
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+}
+
+/* --- Member name label, similar to anggota-theme subtitle-text or label-text --- */
+.dashboard-anggota-member-name-label {
+    -fx-text-fill: #5b5890; /* From anggota-theme subtitle-text */
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+}
+
+/* --- Menu buttons, adapted from toggle-button in anggota-theme --- */
+.dashboard-anggota-menu-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #5b5890; /* From anggota-theme toggle-button */
+    -fx-font-size: 16px;
+    -fx-alignment: CENTER_LEFT;
+    -fx-padding: 8px 20px; /* Adopted from toggle-button for better padding */
+    -fx-cursor: hand;
+    -fx-border-radius: 20px; /* Rounded corners like toggle-button */
+    -fx-background-radius: 20px; /* Rounded corners like toggle-button */
+
+    -fx-transition: all 0.3s ease-in-out; /* From toggle-button */
+}
+
+.dashboard-anggota-menu-button:hover {
+    -fx-text-fill: -light-text; /* From anggota-theme toggle-button:hover */
+    -fx-background-color: transparent; /* Keep background transparent or use a subtle highlight */
+    -fx-effect: none; /* Remove existing shadow for a cleaner look if not explicitly needed */
+}
+
+.dashboard-anggota-menu-button:selected, /* Use :selected for active state if applicable */
+.dashboard-anggota-menu-button:pressed {
+    -fx-background-color: -light-text; /* From anggota-theme toggle-button:selected */
+    -fx-text-fill: white;
+    -fx-effect: none; /* From anggota-theme toggle-button:selected */
+}
+
+
+/* --- Logout button, adapted from login-button in anggota-theme --- */
+.dashboard-anggota-logout-button {
+    -fx-background-color: linear-gradient(to right, -light-accent, #512da8); /* From anggota-theme login-button */
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-alignment: CENTER;
+    -fx-cursor: hand;
+    -fx-border-radius: 20px; /* Rounded corners like login-button */
+    -fx-background-radius: 20px; /* Rounded corners like login-button */
+
+    -fx-effect: dropshadow(gaussian, -light-accent, 15, 0.3, 0, 0); /* From anggota-theme login-button */
+    -fx-transition: all 0.3s ease-in-out; /* From login-button */
+}
+
+.dashboard-anggota-logout-button:hover {
+    -fx-effect: dropshadow(gaussian, -light-accent, 25, 0.5, 0, 0); /* From anggota-theme login-button:hover */
+    -fx-translate-y: -2px; /* From login-button:hover */
+}
+
+/* --- Content Label, similar to anggota-theme title-text --- */
+.dashboard-anggota-content-label {
+    -fx-text-fill: -light-text; /* Uses the light text color */
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+}
+
+/* --- Line color --- */
+.line {
+    -fx-stroke: #d1c4e9; /* Kept original, as no direct equivalent in anggota-theme, but this fits the light scheme */
+    -fx-stroke-width: 1px;
+}

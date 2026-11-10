@@ -1,0 +1,161 @@
+.root {
+    /* DEFINISI VARIABEL WARNA DISESUAIKAN DENGAN style.css (dark theme) */
+    -dark-bg-start: #23214a;
+    -dark-bg-end: #38327a;
+    -dark-card-bg: rgba(0, 0, 0, 0.25);
+    -dark-text: #e0e0e0;
+    -dark-accent: #ab47bc;
+}
+
+@keyframes aurora-animation {
+    0% { -fx-background-position: 0% 50%; }
+    50% { -fx-background-position: 100% 50%; }
+    100% { -fx-background-position: 0% 50%; }
+}
+
+.aurora-background {
+    -fx-background-color: linear-gradient(from 0% 0% to 100% 100%,
+                                           -dark-bg-start,
+                                           -dark-accent,
+                                           -dark-bg-end);
+    /* Anda bisa menambahkan animasi jika diinginkan saat program berjalan */
+    /* -fx-animation: aurora-animation 15s ease infinite; */
+}
+
+/* Sidebar background */
+.dashboard-pengurus-sidebar {
+    -fx-background-color: -dark-card-bg; /* Menggunakan warna card dari dark theme */
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 30, 0.0, 5, 0); /* Bayangan untuk memberi kedalaman */
+}
+
+.content-card { /* Ini mungkin tidak lagi digunakan secara langsung jika content-card hanya untuk VBox kecil sebelumnya */
+    -fx-background-color: -dark-card-bg;
+    -fx-background-radius: 25px;
+    -fx-border-radius: 25px;
+    -fx-border-width: 1.5px;
+    -fx-border-color: rgba(255, 255, 255, 0.2);
+    -fx-padding: 40px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 30, 0.0, 0, 0);
+}
+
+.welcome-title {
+    -fx-font-family: "Poppins";
+    -fx-font-size: 32px; /* Ukuran diperkecil */
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 5, 0, 0, 2);
+}
+
+.welcome-subtitle {
+    -fx-font-family: "Poppins";
+    -fx-font-size: 16px; /* Sedikit diperbesar agar lebih terlihat */
+    -fx-text-fill: -dark-text;
+}
+
+.dashboard-content-label { /* Gaya untuk label di area konten tengah */
+    -fx-font-family: "Poppins";
+    -fx-font-size: 24px;
+    -fx-text-fill: -dark-text;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 5, 0, 0, 2);
+}
+
+/* ======================================================= */
+/* ====== STYLING TOMBOL MENYERUPAI style.css ====== */
+/* ======================================================= */
+
+.menu-button {
+    -fx-background-color: linear-gradient(to right, -dark-accent, #7e57c2);
+    -fx-background-radius: 20px;
+    -fx-text-fill: white;
+    -fx-font-family: "Poppins";
+    -fx-font-size: 16px;
+    -fx-alignment: CENTER_LEFT;
+    -fx-padding: 15px 25px;
+    -fx-graphic-text-gap: 15px;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, -dark-accent, 15, 0.4, 0, 0);
+    -fx-transition: all 0.3s ease-in-out;
+
+}
+
+.menu-button:hover {
+    -fx-effect: dropshadow(gaussian, -dark-accent, 25, 0.6, 0, 0);
+    -fx-translate-y: -2px;
+}
+
+.menu-button:pressed {
+    -fx-background-color: derive(-dark-accent, -10%);
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 10, 0.0, 0, 0);
+    -fx-translate-y: 0px;
+}
+
+.logout-button {
+    -fx-background-color: linear-gradient(to right, #e74c3c, #c0392b);
+    -fx-background-radius: 20px;
+    -fx-text-fill: white;
+    -fx-font-family: "Poppins";
+    -fx-font-size: 16px;
+    -fx-alignment: CENTER_LEFT;
+    -fx-padding: 15px 25px;
+    -fx-graphic-text-gap: 15px;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, #e74c3c, 15, 0.4, 0, 0);
+    -fx-transition: all 0.3s ease-in-out;
+
+}
+
+.logout-button:hover {
+    -fx-effect: dropshadow(gaussian, #e74c3c, 25, 0.6, 0, 0);
+    -fx-translate-y: -2px;
+}
+
+.logout-button:pressed {
+    -fx-background-color: derive(#e74c3c, -10%);
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 10, 0.0, 0, 0);
+    -fx-translate-y: 0px;
+}
+
+/* Styling untuk ikon SVG di dalam tombol menu */
+.menu-button .svg-path {
+    -fx-fill: white;
+    -fx-scale-x: 1.1;
+    -fx-scale-y: 1.1;
+    -fx-transition: fill 0.3s ease, scale 0.3s ease;
+}
+
+.menu-button:hover .svg-path {
+    -fx-scale-x: 1.2;
+    -fx-scale-y: 1.2;
+}
+
+.menu-button:pressed .svg-path {
+    -fx-scale-x: 1.1;
+    -fx-scale-y: 1.1;
+}
+
+/* Styling untuk tombol logout di bagian bawah tengah (tanpa ikon) */
+.logout-button-bottom {
+    -fx-background-color: linear-gradient(to right, #e74c3c, #c0392b);
+    -fx-background-radius: 20px;
+    -fx-text-fill: white;
+    -fx-font-family: "Poppins";
+    -fx-font-size: 16px;
+    -fx-alignment: CENTER; /* Teks di tengah tombol */
+    -fx-padding: 15px 25px;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, #e74c3c, 15, 0.4, 0, 0);
+    -fx-transition: all 0.3s ease-in-out;
+    -fx-min-width: 150px; /* Sesuaikan lebar minimum jika perlu */
+    -fx-max-width: 266px; /* Sesuaikan lebar maksimum jika perlu */
+}
+
+.logout-button-bottom:hover {
+    -fx-effect: dropshadow(gaussian, #e74c3c, 25, 0.6, 0, 0);
+    -fx-translate-y: -2px;
+}
+
+.logout-button-bottom:pressed {
+    -fx-background-color: derive(#e74c3c, -10%);
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 10, 0.0, 0, 0);
+    -fx-translate-y: 0px;
+}

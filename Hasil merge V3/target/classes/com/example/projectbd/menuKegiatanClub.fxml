@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane fx:id="mainPane" prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projectbd.PENGURUS.menuCRUDkegiatanclubController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+
+    <top>
+        <HBox alignment="CENTER_LEFT" prefHeight="40.0" spacing="10.0" BorderPane.alignment="CENTER">
+            <children>
+                <TextField fx:id="searchBar" prefHeight="42.0" promptText="Cari berdasarkan Nama Kegiatan..." HBox.hgrow="ALWAYS" />
+                <Button fx:id="searchButton" mnemonicParsing="false" onAction="#handleSearch" styleClass="search-button" text="Search" />
+            </children>
+            <BorderPane.margin>
+                <Insets bottom="20.0" />
+            </BorderPane.margin>
+        </HBox>
+    </top>
+
+    <center>
+        <TableView fx:id="kegiatanClubTable" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <columns>
+                <TableColumn fx:id="colIdKegiatanClub" text="ID Kegiatan" />
+                <TableColumn fx:id="colJenisKegiatan" text="Jenis Kegiatan" />
+                <TableColumn fx:id="colNamaClub" text="Nama Club" />
+                <TableColumn fx:id="colNamaLokasi" text="Nama Lokasi" />
+                <TableColumn fx:id="colNamaKegiatan" text="Nama Kegiatan" />
+                <TableColumn fx:id="colTanggalKegiatan" text="Tanggal" />
+                <TableColumn fx:id="colDapatSerti" text="Dapat Sertifikat?" />
+            </columns>
+            <columnResizePolicy>
+                <TableView fx:constant="UNCONSTRAINED_RESIZE_POLICY" />
+            </columnResizePolicy>
+        </TableView>
+    </center>
+
+    <bottom>
+        <VBox spacing="15.0" BorderPane.alignment="CENTER">
+            <BorderPane.margin>
+                <Insets top="20.0" />
+            </BorderPane.margin>
+            <children>
+                <GridPane hgap="10.0" styleClass="form-grid" vgap="10.0">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="150.0" minWidth="120.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                    <children>
+                        <Label styleClass="form-label" text="Jenis Kegiatan" /> <ComboBox fx:id="idJenisKegiatanComboBox" promptText="Pilih jenis kegiatan" GridPane.columnIndex="1" />
+
+                        <Label styleClass="form-label" text="Club" GridPane.rowIndex="1" />
+                        <ComboBox fx:id="idClubComboBox" promptText="Pilih club" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+                        <Label styleClass="form-label" text="Lokasi" GridPane.rowIndex="2" />
+                        <ComboBox fx:id="idLokasiComboBox" promptText="Pilih lokasi" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+                        <Label styleClass="form-label" text="Nama Kegiatan" GridPane.rowIndex="3" />
+                        <TextField fx:id="namaKegiatanField" promptText="Masukkan nama kegiatan" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+                        <Label styleClass="form-label" text="Tanggal Kegiatan" GridPane.rowIndex="4" />
+                        <DatePicker fx:id="tanggalKegiatanPicker" promptText="Pilih tanggal" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+
+                        <Label styleClass="form-label" text="Dapat Sertifikat?" GridPane.rowIndex="5" />
+                        <HBox alignment="CENTER_LEFT" spacing="15.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                            <children>
+                                <RadioButton fx:id="sertiYesRadio" text="Ya" styleClass="radio-button-custom">
+                                    <toggleGroup>
+                                        <ToggleGroup fx:id="sertiToggleGroup" />
+                                    </toggleGroup>
+                                </RadioButton>
+                                <RadioButton fx:id="sertiNoRadio" text="Tidak" styleClass="radio-button-custom" toggleGroup="$sertiToggleGroup" />
+                            </children>
+                        </HBox>
+
+                    </children>
+                </GridPane>
+                <HBox alignment="CENTER_RIGHT" spacing="10.0">
+                    <children>
+                        <Button fx:id="addButton" mnemonicParsing="false" onAction="#handleAdd" styleClass="add-button" text="Add New" />
+                        <Button fx:id="updateButton" mnemonicParsing="false" onAction="#handleUpdate" styleClass="update-button" text="Update" />
+                        <Button fx:id="deleteButton" mnemonicParsing="false" onAction="#handleDelete" styleClass="delete-button" text="Delete" />
+                        <Button fx:id="clearButton" mnemonicParsing="false" onAction="#handleClear" styleClass="clear-button" text="Clear Form" />
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+    </bottom>
+</BorderPane>

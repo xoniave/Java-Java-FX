@@ -1,0 +1,188 @@
+
+* {
+    -fx-font-family: 'Poppins';
+
+    -dark-bg-start: #23214a;
+    -dark-bg-end: #38327a;
+    -dark-card-bg: rgba(0, 0, 0, 0.25);
+    -dark-text: #e0e0e0;
+    -dark-accent: #ab47bc;
+
+    -light-bg-start: #f2f2f7;
+    -light-bg-end: #e6e5ff;
+    -light-card-bg: rgba(255, 255, 255, 0.7);
+    -light-text: #2c2a4a;
+    -light-accent: #7e57c2;
+}
+
+/* ---background paling blkg --- */
+.main-pane {
+    -fx-background-color: linear-gradient(from 0% 0% to 100% 100%,
+                                           -dark-bg-start,
+                                           -dark-accent,
+                                           -dark-bg-end);
+}
+
+/* --- background kotak putih --- */
+.login-card {
+    -fx-background-color: -dark-card-bg;
+    -fx-background-radius: 20px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 20, 0.1, 0, 0);
+    -fx-border-color: rgba(255, 255, 255, 0.2);
+    -fx-border-width: 1px;
+    -fx-border-radius: 20px;
+}
+
+/* --- Text design --- */
+.title-text {
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-fill: white;
+}
+
+.subtitle-text {
+    -fx-font-size: 13px;
+    -fx-fill: -dark-text;
+}
+
+.label-text {
+    -fx-font-size: 12px;
+    -fx-font-weight: 500; /* Medium */
+    -fx-fill: white;
+}
+
+/* --- Input design--- */
+.text-field, .password-field {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent transparent rgba(255, 255, 255, 0.5) transparent;
+    -fx-border-width: 0 0 2 0;
+    -fx-text-fill: white;
+    -fx-prompt-text-fill: #b0aecf;
+    -fx-font-size: 14px;
+    -fx-padding: 8px 2px;
+    -fx-transition: all 0.3s ease-in-out;
+}
+
+.text-field:focused, .password-field:focused {
+    -fx-border-color: transparent transparent -dark-accent transparent;
+    -fx-prompt-text-fill: transparent;
+}
+
+/* --- Tombol Toggle--- */
+.toggle-container .toggle-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: -dark-text;
+    -fx-border-color: transparent;
+    -fx-font-size: 13px;
+    -fx-padding: 8px 20px;
+    -fx-background-radius: 20px;
+    -fx-transition: all 0.3s ease-in-out;
+}
+
+.toggle-container .toggle-button:hover {
+    -fx-text-fill: white;
+}
+
+.toggle-container .toggle-button:selected {
+    -fx-background-color: -dark-accent;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(gaussian, -dark-accent, 10, 0.5, 0, 0);
+}
+
+/* --- Tombol Login & Exit --- */
+.login-button {
+    -fx-background-color: linear-gradient(to right, -dark-accent, #7e57c2);
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-background-radius: 20px;
+    -fx-effect: dropshadow(gaussian, -dark-accent, 15, 0.4, 0, 0);
+    -fx-transition: all 0.3s ease-in-out;
+}
+
+.login-button:hover {
+    -fx-effect: dropshadow(gaussian, -dark-accent, 25, 0.6, 0, 0);
+    -fx-translate-y: -2px;
+}
+
+.exit-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: -dark-text;
+    -fx-font-size: 12px;
+    -fx-border-color: transparent;
+    -fx-transition: all 0.3s ease-in-out;
+}
+
+.exit-button:hover {
+    -fx-text-fill: white;
+    -fx-underline: true;
+}
+
+
+/* ################ TEMA ANGGOTA (TERANG) ############### */
+.anggota-theme.main-pane {
+    /*tema terang */
+    -fx-background-color: linear-gradient(from 0% 0% to 100% 100%,
+                                           -light-bg-start,
+                                           -light-accent,
+                                           -light-bg-end);
+}
+
+.anggota-theme .login-card {
+    -fx-background-color: -light-card-bg;
+    -fx-border-color: rgba(255, 255, 255, 0.9);
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 25, 0.05, 0, 0);
+}
+
+.anggota-theme .title-text,
+.anggota-theme .label-text {
+    -fx-fill: -light-text;
+}
+
+.anggota-theme .subtitle-text {
+    -fx-fill: #5b5890;
+}
+
+.anggota-theme .text-field,
+.anggota-theme .password-field {
+    -fx-border-color: transparent transparent #c5c2e8 transparent;
+    -fx-text-fill: -light-text;
+    -fx-prompt-text-fill: #8a88b8;
+}
+
+.anggota-theme .text-field:focused,
+.anggota-theme .password-field:focused {
+    -fx-border-color: transparent transparent -light-accent transparent;
+}
+
+.anggota-theme .toggle-container .toggle-button {
+    -fx-text-fill: #5b5890;
+}
+
+.anggota-theme .toggle-container .toggle-button:hover {
+    -fx-text-fill: -light-text;
+}
+
+.anggota-theme .toggle-container .toggle-button:selected {
+    -fx-background-color: -light-text;
+    -fx-text-fill: white;
+    -fx-effect: none;
+}
+
+.anggota-theme .login-button {
+    -fx-background-color: linear-gradient(to right, -light-accent, #512da8);
+    -fx-effect: dropshadow(gaussian, -light-accent, 15, 0.3, 0, 0);
+}
+
+.anggota-theme .login-button:hover {
+     -fx-effect: dropshadow(gaussian, -light-accent, 25, 0.5, 0, 0);
+}
+
+.anggota-theme .exit-button {
+    -fx-text-fill: #5b5890;
+}
+
+.anggota-theme .exit-button:hover {
+    -fx-text-fill: -light-text;
+}

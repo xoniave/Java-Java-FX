@@ -1,0 +1,58 @@
+/* It's highly recommended to import your style.css here if this file is meant to be standalone
+   and relies on the variables defined in style.css. Adjust the path as needed. */
+@import "style.css"; /* Example: @import "../style.css"; or @import "file:path/to/style.css"; */
+
+/* General background for the main content area - using light theme colors, similar to dashboard-anggota-content-area */
+.content-view-container {
+    -fx-background-color: linear-gradient(from 0% 0% to 100% 100%,
+                                           -light-bg-start,
+                                           -light-accent,
+                                           -light-bg-end);
+    -fx-padding: 40px; /* Consistent padding with the FXML */
+    -fx-background-radius: 10px; /* Slightly rounded corners */
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.05), 15, 0, 0, 5); /* Soft shadow */
+}
+
+/* Style for the main title "My Profile" - matching dashboard-anggota-content-label */
+.content-view-title {
+    -fx-text-fill: -light-text; /* Use light theme text color */
+    -fx-font-family: 'Poppins', sans-serif; /* Consistent with style.css */
+    -fx-font-weight: bold;
+    -fx-font-size: 40px; /* Larger size for main title */
+    -fx-padding: 0 0 15px 0; /* Adjust padding for better spacing */
+}
+
+/* Style for the profile details card - similar to table-view-custom background */
+.profile-details-card {
+    -fx-background-color: -light-card-bg; /* Use light card background */
+    -fx-border-color: rgba(255, 255, 255, 0.9); /* Lighter border from anggota-theme login-card */
+    -fx-border-radius: 10px; /* Rounded corners */
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 25, 0.05, 0, 0); /* Soft shadow from anggota-theme login-card */
+    -fx-padding: 20px; /* Padding inside the card */
+    -fx-spacing: 18px; /* Spacing between elements within the VBox */
+}
+
+/* Style for labels (e.g., NRP, Full Name) */
+.profile-label {
+    -fx-text-fill: #5b5890; /* From anggota-theme subtitle-text */
+    -fx-font-size: 17px;
+    -fx-font-weight: bold; /* Make labels bold for distinction */
+}
+
+/* Style for profile values (e.g., [Loading...], actual data) */
+.profile-value {
+    -fx-text-fill: -light-text; /* Light theme text color for values */
+    -fx-font-size: 17px;
+}
+
+/* Adjustments for GridPane within the profile details card */
+.profile-details-card .grid-pane {
+    -fx-hgap: 20px;
+    -fx-vgap: 18px;
+    -fx-padding: 20px;
+}
+
+/* HBox for buttons (if any are added later, currently empty in FXML) */
+.hbox {
+    -fx-spacing: 15px; /* Consistent spacing with listClub.css */
+}
