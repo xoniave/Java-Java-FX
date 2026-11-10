@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Button?>
+
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="486.0" prefWidth="600.0" style="-fx-background-color: Pink;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.datamenu.HelloController">
+   <children>
+      <Label prefHeight="35.0" prefWidth="173.0" text="INSERT DATA MENU">
+         <font>
+            <Font size="19.0" />
+         </font>
+         <VBox.margin>
+            <Insets left="10.0" top="10.0" />
+         </VBox.margin>
+      </Label>
+      <HBox prefHeight="71.0" prefWidth="600.0">
+         <children>
+            <VBox alignment="TOP_CENTER" prefHeight="71.0" prefWidth="138.0">
+               <children>
+                  <Label prefHeight="17.0" prefWidth="114.0" text="Jenis Menu" />
+               </children>
+            </VBox>
+            <VBox prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <RadioButton fx:id="rbFood" mnemonicParsing="false" prefHeight="17.0" prefWidth="94.0" selected="true" text="Food">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="btnJenis" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="rbDrink" mnemonicParsing="false" prefHeight="17.0" prefWidth="94.0" text="Drink" toggleGroup="$btnJenis" />
+               </children>
+            </VBox>
+         </children>
+         <VBox.margin>
+            <Insets top="10.0" />
+         </VBox.margin>
+      </HBox>
+      <HBox layoutX="10.0" layoutY="65.0" prefHeight="71.0" prefWidth="600.0">
+         <children>
+            <VBox alignment="TOP_CENTER" prefHeight="75.0" prefWidth="138.0" spacing="10.0">
+               <children>
+                  <Label prefHeight="26.0" prefWidth="114.0" text="Nama" />
+                  <Label layoutX="22.0" layoutY="10.0" prefHeight="24.0" prefWidth="114.0" text="Harga" />
+                  <Label layoutX="22.0" layoutY="27.0" prefHeight="24.0" prefWidth="114.0" text="Stok" />
+               </children>
+            </VBox>
+            <VBox prefHeight="75.0" prefWidth="424.0" spacing="10.0">
+               <children>
+                  <TextField fx:id="txtNama" prefHeight="25.0" prefWidth="284.0" />
+                  <TextField fx:id="txtHarga" layoutX="10.0" layoutY="10.0" />
+                  <TextField fx:id="txtStock" layoutX="10.0" layoutY="35.0" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <HBox alignment="TOP_CENTER" layoutX="10.0" layoutY="136.0" prefHeight="62.0" prefWidth="600.0" spacing="10.0">
+         <children>
+            <Button fx:id="btnSimpan" mnemonicParsing="false" onAction="#onSimpan" text="Simpan" />
+            <Button fx:id="btnClear" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#onClear" text="Clear" />
+            <Button fx:id="btnHapus" layoutX="62.0" layoutY="10.0" mnemonicParsing="false" text="Hapus" />
+            <Button fx:id="btnClearSession" layoutX="114.0" layoutY="10.0" mnemonicParsing="false" text="Clear Session" />
+         </children>
+         <VBox.margin>
+            <Insets top="10.0" />
+         </VBox.margin>
+      </HBox>
+      <Label layoutX="20.0" layoutY="20.0" prefHeight="35.0" prefWidth="173.0" text="History Produk">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tv" prefHeight="200.0" prefWidth="200.0">
+        <columns>
+          <TableColumn fx:id="tbC1" prefWidth="75.0" text="Jenis" />
+          <TableColumn fx:id="tbC2" prefWidth="75.0" text="Nama" />
+            <TableColumn fx:id="tbC3" prefWidth="75.0" text="Harga" />
+            <TableColumn fx:id="tbC4" prefWidth="75.0" text="Stock" />
+        </columns>
+      </TableView>
+   </children>
+</VBox>
